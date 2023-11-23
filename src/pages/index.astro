@@ -1,16 +1,41 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <section class="everydayfeed">
+    <div class="section-content">
+      <h2 class="section-head"></h2>
+      
+    </div>
+  </section>
+
+  <section class="more-from-newsroom">
+    <div class="section-content">
+      <h2 class="section-head"></h2>
+   
+
+      <ul role="list" class="section-tiles">
+
+       
+      </ul>
+      <div class="view-archive-wrapper">
+        <a href="/archive" class="cta-primary-light" data-analytics-region="router" data-analytics-title="view archive">阅读历史文章</a>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", function () {
+      var script = document.createElement("script");
+      script.src = "/static/js/animation.js";
+      document.head.appendChild(script);
+
+      script.onload = function () {
+        console.log("lazyload.js loaded");
+        // when layout is loaded, load the images
+        initImage();
+      };
+    });
+  </script>
+</BaseLayout>

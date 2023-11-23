@@ -1,0 +1,31 @@
+---
+import Header from '../components/Header.astro';
+import Modal from '../components/Modal.astro';
+let modal;
+function showModal() {
+  modal.style.display = 'block';
+} 
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Header />
+		
+<button on:click={showModal}>Show Modal</button>
+<Modal client:load bind:this={modal}>
+	</body>
+</html>
+
+<style>
+	div {
+	  font-size: 74px;
+	  text-align: center;
+	}  
+</style>
